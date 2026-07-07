@@ -1,11 +1,11 @@
-﻿using MelonLoader;
+using MelonLoader;
 using HarmonyLib;
 using UnityEngine;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 
-[assembly: MelonInfo(typeof(CustomResolution.Core), "CustomResolution", "0.0.1", "MMXCawa")]
+[assembly: MelonInfo(typeof(CustomResolution.Core), "CustomResolution", "0.0.2", "MMXCawa")]
 [assembly: MelonGame("7th Beat Games", "A Dance of Fire and Ice")]
 
 namespace CustomResolution
@@ -73,7 +73,7 @@ namespace CustomResolution
             ApplySaved();
 
             new HarmonyLib.Harmony("com.mmx.customresolution").PatchAll();
-            LoggerInstance.Msg("CustomResolution v0.0.1 loaded");
+            LoggerInstance.Msg("CustomResolution v0.0.2 by MMXCawa\nPress F1 to open menu.");
         }
 
         public override void OnUpdate()
@@ -151,7 +151,7 @@ namespace CustomResolution
                 return;
             }
 
-            if (w <= 0 || h <= 0 || w > 8192 || h > 8192)
+            if (w <= 0 || h <= 0 || w > 19200 || h > 10800)
             {
                 errorText = "超出允许范围";
                 return;
